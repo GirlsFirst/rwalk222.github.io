@@ -49,12 +49,20 @@ body {
 
 .searchShow {
   display:inline;
-  width: 1200px;
+  width: 70%;
   transition: all 0.8s ease;
-  height: 30px;
+  height: 28px;
   font-size: 18px;
   margin-top: 0px;
-  top padding-top: 0px;
+  padding-top: 0px;
+}
+
+.dropdownHidden {
+  display: none;
+}
+
+.dropdownShow {
+  display: inline-block;
 }
 
 #bar-img {

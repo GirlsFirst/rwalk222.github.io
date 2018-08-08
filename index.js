@@ -1,5 +1,10 @@
+function dropdown() {
+  document.getElementById("dropdown").classList.toggle("dropdownShow")
+}
+
 function menuChange(change) {
-    change.classList.toggle("menu");
+  change.classList.toggle("menu");
+  dropdown();
 }
 
 function searchBar() {
