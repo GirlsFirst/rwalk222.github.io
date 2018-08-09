@@ -2,11 +2,27 @@ function dropdown() {
   document.getElementById("dropdown").classList.toggle("dropdownShow")
 }
 
-function menuChange(change) {
-  change.classList.toggle("menu");
-  dropdown();
+function myFunction() {
+   document.getElementById("dropdown").classList.toggle("show");
+   menuChange(menu);
 }
 
+function menuChange(menu) {
+  menu.classList.toggle("menu");
+}
+// Close the dropdown menu if the user clicks outside of it
+window.onclick = function(event) {
+ if (!event.target.matches('.dropbtn')) {
+   var dropdowns = document.getElementsByClassName("dropdown-content");
+   var i;
+   for (i = 0; i < dropdowns.length; i++) {
+     var openDropdown = dropdowns[i];
+     if (openDropdown.classList.contains('show')) {
+       openDropdown.classList.remove('show');
+     }
+   }
+ }
+}
 function searchBar() {
   document.getElementById("searchid").classList.toggle("searchShow");
 }
