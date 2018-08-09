@@ -7,7 +7,13 @@
 
 body {
   margin: 0px;
-  background-color: #efe2ba;
+  background-color: #f4f3d4;
+  opacity: 50%;
+}
+
+.logo-img a {
+  align-content: center;
+  padding: 0;
 }
 
 .bar1, .bar2, .bar3 {
