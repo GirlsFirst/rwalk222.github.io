@@ -5,34 +5,6 @@
   margin-top: 0px;
 }
 
-#midul {
-  list-style-type: none;
-  display: inline-block;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  width: 100%;
-}
-
-#midli {
-  width: 19.7469%;
-  display: inline-block;
-  margin-right: -5px;
-}
-
-#midli:last-child {
-  margin-right: 21px;
-}
-
-#midli a{
-  display: block;
-  background-color: #4056a1;
-  text-decoration: none;
-  text-align: center;
-  color: #c5cbe3;
-  font-size: 21px;
-}
-
 .footer {
   background-color: #4056A1;
   padding-top: 20px;
