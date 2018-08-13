@@ -1,3 +1,59 @@
 <!DOCTYPE html>
 <html>
-  <h1> Everyday Math </h1>
+<head>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel= "stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+</head>
+<body>
+  <h1><center> Everyday Math </h1></center>
+  <a>
+    <span id="menu" class="dropbtn" onclick="myFunction()">
+      <div class= "bar1"></div>
+      <div class= "bar2"></div>
+      <div class= "bar3"></div>
+    </span>
+  </a>
+  <div id="dropdown"  class="dropdown-content dropdownHidden">
+    <a href="#">Education</a>
+    <a href="#">Everyday Math</a>
+    <a href="#">Politics</a>
+    <a href="#">Arts</a>
+    <a href="#">Sports</a>
+  </div>
+  <a>
+    <span>
+      <input id= "bar-img" type= "image" src= "search bar.svg" onclick= "searchBar()">
+  </span>
+  </a>
+  <input id= "searchid" class="searchHidden" type="search" placeholder="Search...">
+  <input id= "user-img" type="image" name="" src="user icon.svg">
+</div>
+    <script src="index.js"></script>
+  <h2><center> Today in Education </h2></center>
+
+  <button class="tablink" onclick="openPage('News', this, 'red')">News</button>
+<button class="tablink" onclick="openPage('Articles', this, 'green')" id="defaultOpen">Articles</button>
+<button class="tablink" onclick="openPage('Opinion Editorials', this, 'blue')">Opinion Editorials</button>
+<button class="tablink" onclick="openPage('About', this, 'orange')">Quizzes</button>
+
+<div id="News" class="tabcontent">
+  <h3>News</h3>
+  <p>Home is where the heart is..</p>
+</div>
+
+<div id="Articles" class="tabcontent">
+  <h3>Articles</h3>
+  <p>Some news this fine day!</p>
+</div>
+
+<div id="Op-Eds" class="tabcontent">
+  <h3>Opinion Editorials</h3>
+  <p>Get in touch, or swing by for a cup of coffee.</p>
+</div>
+
+<div id="Quizzes" class="tabcontent">
+  <h3>Quizzes</h3>
+  <p>Who we are and what we do.</p>
+</div>
+</body>
