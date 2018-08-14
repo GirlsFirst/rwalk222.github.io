@@ -1,9 +1,0 @@
-.centered {
-    text-align: center;
-    width: 100%;
-}
-
-.centered_tab {
-    float:none /*to make sure there is no active float*/
-    display: inline-block
-}

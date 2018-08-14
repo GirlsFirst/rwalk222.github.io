@@ -6,7 +6,7 @@ $(window).on("load", function(){
   }).done(function(data){
     console.log(data)
   })*/
-  getArticles();
+  getArticles("politics");
 })
 
 function getArticles(type= "") {
@@ -38,13 +38,6 @@ function displayArticles(data) {
   document.getElementById("art4description").innerHTML=data[3].description;
   document.getElementById("art4img").innerHTML= `<img src="${data[3].urlToImage}"id= "r4img">`
 }
-
-/*function buildArticleHTML(article) {
-  var title= article.title;
-  var description= article.description;
-  var articleUrl= article.url;
-  var imageUrl= article.urlToImage;
-}*/
 
 function dropdown() {
   document.getElementById("dropdown").classList.toggle("dropdownShow")
