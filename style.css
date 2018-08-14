@@ -82,8 +82,42 @@ hr {
     color: #4056a1;
 }
 
+#leftTempTop {
+    background-color: #f79922;
+    padding-bottom: 20px;
+    padding-top: 18px;
+}
+
+#sush2 {
+  font-size: 28px;
+  margin-left: 10px;
+}
+
+form.emailSus {
+  margin-left: 10px;
+  padding-bottom: 15px;
+}
+
 .leftTemp {
   width: 33.33%;
+  margin: 4px;
+}
+
+#susbox {
+  margin-left: 10px;
+  padding: 3px;
+}
+
+form.emailSus input[type=email] {
+  width: 55%;
+}
+
+#bottomTempTop {
+  width: 100%;
+}
+
+#botth2 {
+  font-size: 28px;
 }
 
 .footer {

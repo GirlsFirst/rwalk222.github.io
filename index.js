@@ -21,11 +21,12 @@ function getArticles(type= "") {
   })
 }
 
-function displayArticles(data) {
+/*function displayArticles(data) {
+  debugger;
   //add first image to page//
   document.getElementById("art1title").innerHTML=data[0].title;
   document.getElementById("art1description").innerHTML=data[0].description;
-/*  document.getElementById("art1").innerHTML=data[0].title;var articleUrl= data[0].url;*/
+  document.getElementById("art1").innerHTML=data[0].title;var articleUrl= data[0].url;
   document.getElementById("art1img").innerHTML= `<img src="${data[0].urlToImage}" id= "r1img">`
   //data[0].title;var imageUrl= data[0].urlToImage;//
   document.getElementById("art2title").innerHTML=data[1].title;
@@ -37,14 +38,34 @@ function displayArticles(data) {
   document.getElementById("art4title").innerHTML=data[3].title;
   document.getElementById("art4description").innerHTML=data[3].description;
   document.getElementById("art4img").innerHTML= `<img src="${data[3].urlToImage}"id= "r4img">`
-}
+}*/
 
-/*function buildArticleHTML(article) {
+function buildArticleHTML(article, id) {
   var title= article.title;
   var description= article.description;
   var articleUrl= article.url;
   var imageUrl= article.urlToImage;
-}*/
+  return (`
+    <div id= "article-${id}">
+      <p id= "article-${id}-title">${title}</p>
+      <div id= "article-${id}-img"><img src= "${imageUrl}" id= "img-${id}"></div>
+      <p id= "article-${id}-description">${description}</p>
+    </div>
+  `)
+}
+
+function displayArticles(data) {
+  /* This for loop is equivalent to running the following:
+  ${buildArticleHTML(data[0], 1)}
+  ${buildArticleHTML(data[1], 2)}
+  ${buildArticleHTML(data[2], 3)}
+  ${buildArticleHTML(data[3], 4)}*/
+  var articlesHtml = [];
+  for (var i = 0; i < 4; i++) {
+    articlesHtml.push(buildArticleHTML(data[i], i + 1));
+  }
+  document.getElementById("mainhead").innerHTML= articlesHtml.join('');
+}
 
 function dropdown() {
   document.getElementById("dropdown").classList.toggle("dropdownShow")
