@@ -1,59 +1,104 @@
 <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
-<head>
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel= "stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-</head>
-<body>
-  <h1><center> Everyday Math </h1></center>
-  <a>
-    <span id="menu" class="dropbtn" onclick="myFunction()">
-      <div class= "bar1"></div>
-      <div class= "bar2"></div>
-      <div class= "bar3"></div>
-    </span>
-  </a>
-  <div id="dropdown"  class="dropdown-content dropdownHidden">
-    <a href="#">Education</a>
-    <a href="#">Everyday Math</a>
-    <a href="#">Politics</a>
-    <a href="#">Arts</a>
-    <a href="#">Sports</a>
-  </div>
-  <a>
-    <span>
-      <input id= "bar-img" type= "image" src= "search bar.svg" onclick= "searchBar()">
-  </span>
-  </a>
-  <input id= "searchid" class="searchHidden" type="search" placeholder="Search...">
-  <input id= "user-img" type="image" name="" src="user icon.svg">
-</div>
-    <script src="index.js"></script>
-  <h2><center> Today in Education </h2></center>
+  <head>
+    	<link rel="stylesheet" type="text/css" href="index(pol).css">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel= "stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  </head>
+  <body>
+    <title>
+      Everyday Math
+    </title>
+    <div class="header">
+      <a>
+        <span id="menu" class="dropbtn" onclick="myFunction()">
+          <div class= "bar1"></div>
+          <div class= "bar2"></div>
+          <div class= "bar3"></div>
+        </span>
+      </a>
+      <a>
+        <span>
+          <i class= "fa fa-search" id= "navsearch" onclick= "searchBar()"></i>
+        </span>
+      </a>
+      <input id= "searchid" class="searchHidden" type="search" placeholder="Search...">
+      <img id= "logo" src= "logo.png">
+      <i class= "fa fa-user" id= "navuser"></i>
+    </div>
+    <div id="dropdown"  class="dropdown-content dropdownHidden">
+      <a href="index(edu).html">Health</a>
+      <a href="index(ev).html">Everyday Math</a>
+      <a href="index(pol).html">Politics</a>
+      <a href="index(art).html">Arts</a>
+      <a href="index(spo).html">Sports</a>
+    </div>
+    <center><h1 id= "polHead"> Today in Everyday Math </h1></center>
+    <hr>
+    <center><div id= "mainphead">
+      <div id="art1">
+        <p id= "art1title"></p>
+        <div id="art1img"></div>
+        <p id= "art1description"></p>
+      </div>
+      <div id= "art2">
+        <p id= "art2title"></p>
+        <div id="art2img"></div>
+        <p id= "art2description"></p>
+      </div>
+      <div id= "art3">
+        <p id= "art3title"></p>
+        <div id="art3img"></div>
+        <p id= "art3description"></p>
+      </div>
+      <div id= "art4">
+        <p id= "art4title"></p>
+        <div id="art4img"></div>
+        <p id= "art4description"></p>
+      </div>
+    <hr>
+    <button class="tablink" onclick="openPage('News', this, '#f13c20')">News</button>
+    <button class="tablink" onclick="openPage('Articles', this, '#d79922')" id="defaultOpen">Articles</button>
+    <button class="tablink" onclick="openPage('Op-Eds', this, '#4056a1')">Opinion Editorials</button>
+    <button class="tablink" onclick="openPage('Quizzes', this, '#035e1c')">Quizzes</button>
+    <div id="News" class="tabcontent">
+      <h2>News</h2>
+      <p>Home is where the heart is..</p>
+    </div>
 
-  <button class="tablink" onclick="openPage('News', this, 'red')">News</button>
-<button class="tablink" onclick="openPage('Articles', this, 'green')" id="defaultOpen">Articles</button>
-<button class="tablink" onclick="openPage('Opinion Editorials', this, 'blue')">Opinion Editorials</button>
-<button class="tablink" onclick="openPage('About', this, 'orange')">Quizzes</button>
+    <div id="Articles" class="tabcontent">
+      <h2>Articles</h2>
+      <p>Some news this fine day!</p>
+    </div>
 
-<div id="News" class="tabcontent">
-  <h3>News</h3>
-  <p>Home is where the heart is..</p>
-</div>
+    <div id="Op-Eds" class="tabcontent">
+      <h2>Opinion Editorials</h2>
+      <p>Get in touch, or swing by for a cup of coffee.</p>
+    </div>
 
-<div id="Articles" class="tabcontent">
-  <h3>Articles</h3>
-  <p>Some news this fine day!</p>
-</div>
-
-<div id="Op-Eds" class="tabcontent">
-  <h3>Opinion Editorials</h3>
-  <p>Get in touch, or swing by for a cup of coffee.</p>
-</div>
-
-<div id="Quizzes" class="tabcontent">
-  <h3>Quizzes</h3>
-  <p>Who we are and what we do.</p>
-</div>
-</body>
+    <div id="Quizzes" class="tabcontent">
+      <h2>Quizzes</h2>
+      <p>Who we are and what we do.</p>
+    </div>
+    <div class="footer">
+      <form class= "ftsearch">
+        <input id= "searchft" type= "search" placeholder= "Search...">
+        <button type= "submit"><i class= "fa fa-search"></i></button>
+      </form>
+      <ul id= "ftul">
+        <li id= "ftli"><a href="aboutus.html">About</a></li>
+        <li id= "ftli"><a href= "ourmissionpage.html">Mission</a></li>
+        <li id= "ftli"><a href="#">Contribute</a></li>
+        <li id= "ftli"><a href= "#">Contact Us</a></li>
+      </ul>
+      <div>
+        <a href="#" class= "fa fa-twitter"></a>
+        <a href="#" class= "fa fa-instagram"></a>
+        <a href="#" class= "fa fa-pinterest"></a>
+      </div>
+    </div>
+  <script src= "jquery-3.3.1.min.js"></script>
+  <script src="index(ev).js"></script>
+  </body>
+</html>
