@@ -6,11 +6,11 @@ $(window).on("load", function(){
   }).done(function(data){
     console.log(data)
   })*/
-  getArticles("art");
+  getArticles("art%20OR%20music");
 })
 
 function getArticles(type= "") {
-  var apiUrl= "https://newsapi.org/v2/everything?apiKey=f7c291e55d624f92a436de14705d5899";
+  var apiUrl= "https://newsapi.org/v2/everything?domains=wsj.com,nytimes.com&apiKey=f7c291e55d624f92a436de14705d5899";
   var url= apiUrl+"&q="+type;
   $.ajax({
     url: url,
