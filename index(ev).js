@@ -7,6 +7,7 @@ $(window).on("load", function(){
     console.log(data)
   })*/
   getArticles("business");
+  getArticles2("business");
 })
 
 function getArticles(type= "") {
@@ -17,7 +18,7 @@ function getArticles(type= "") {
     type: "GET",
     data: {}
   }).done(function(data){
-    displayArticles(data.articles)
+    displayArticles(data.articles);
   })
 }
 
@@ -47,9 +48,30 @@ function buildArticleHTML(article, id) {
   return (`
     <div id= "article-${id}">
       <p id= "article-${id}-title">${title}</p>
-      <div id= "article-${id}-img"><img src= "${imageUrl}" id= "img-${id}"></div>
+      <div id= "article-${id}-img">
+        <a href= "${articleUrl}" target= "_blank"><img src= "${imageUrl || 'logo.png'}" id= "img-${id}"></a>
+      </div>
       <p id= "article-${id}-description">${description}</p>
     </div>
+  `)
+}
+
+function buildArticleHTML2(article, id) {
+  var title= article.title;
+  var description= article.description;
+  var articleUrl= article.url;
+  var imageUrl= article.urlToImage;
+  return (`
+    <div id= "article-5">
+      <div id= "article-5-img">
+        <a href="${articleUrl}" target="_blank"><img src= "${imageUrl || 'logo.png'}" id= "img-5"></a>
+      </div>
+      <div id= "box-5">
+        <p id= "article-5-title">${title}</p>
+        <p id= "article-5-description">${description}</p>
+      </div>
+    </div>
+    <hr>
   `)
 }
 
@@ -65,6 +87,48 @@ function displayArticles(data) {
   }
   document.getElementById("mainphead").innerHTML= articlesHtml.join('');
 }
+
+function getArticles2(type= "") {
+  var apiUrl= "https://newsapi.org/v2/top-headlines?country=us&apiKey=f7c291e55d624f92a436de14705d5899";
+  var url= apiUrl+"&category="+type;
+  $.ajax({
+    url: url,
+    type: "GET",
+    data: {}
+  }).done(function(data){
+    displayArticles2(data.articles)
+  })
+}
+
+function displayArticles2(data) {
+  var articlesHtml = [];
+  for (var i = 4; i < 20; i++) {
+    articlesHtml.push(buildArticleHTML2(data[i], i + 1));
+  }
+  document.getElementById("News").innerHTML= articlesHtml.join('');
+
+  /*document.getElementById("mainphead").innerHTML= articlesHtml.join('');
+  document.getElementById("art1title").innerHTML=data[4].title;
+  document.getElementById("art1description").innerHTML=data[4].description;
+  document.getElementById("art1img").innerHTML= `<img src="${data[4].urlToImage}" id= "r1img">`
+  //data[0].title;var imageUrl= data[0].urlToImage;//
+  document.getElementById("art2title").innerHTML=data[5].title;
+  document.getElementById("art2description").innerHTML=data[5].description;
+  document.getElementById("art2img").innerHTML= `<img src="${data[5].urlToImage}" id= "r2img">`
+  document.getElementById("art3title").innerHTML=data[6].title;
+  document.getElementById("art3description").innerHTML=data[6].description;
+  document.getElementById("art3img").innerHTML= `<img src="${data[6].urlToImage}" id= "r3img">`
+  document.getElementById("art4title").innerHTML=data[7].title;
+  document.getElementById("art4description").innerHTML=data[7].description;
+  document.getElementById("art4img").innerHTML= `<img src="${data[7].urlToImage}"id= "r4img">`*/
+}
+
+/*function displayArticles2(data) {
+  ${buildArticleHTML(data[0], 1)}
+  ${buildArticleHTML(data[1], 2)}
+  ${buildArticleHTML(data[2], 3)}
+  ${buildArticleHTML(data[3], 4)}
+}*/
 
 function dropdown() {
   document.getElementById("dropdown").classList.toggle("dropdownShow")

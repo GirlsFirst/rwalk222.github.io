@@ -101,6 +101,9 @@ form.emailSus {
 .leftTemp {
   width: 33.33%;
   margin: 4px;
+  border-style: solid;
+  border-width: thick;
+  border-color: #4056a1;
 }
 
 #susbox {
@@ -120,6 +123,10 @@ form.emailSus input[type=email] {
   font-size: 28px;
   text-align: center;
   background-color: #f13c20;
+}
+
+#trendnum {
+  text-align: center;
 }
 
 .footer {
@@ -366,4 +373,20 @@ body {
 
 .show {
   display:inline-block;
+}
+
+#trends-1, #trends-2, #trends-3, #trends-4, #trends-5 {
+  width: 100%;
+  display: block;
+  padding-bottom: 5px;
+}
+
+#trends-1-title, #trends-2-title, #trends-3-title, #trends-4-title, #trends-5-title {
+  font-size: 20px;
+  text-align: center;
+  font-weight: bold;
+}
+
+#imgTrends-1, #imgTrends-2, #imgTrends-3, #imgTrends-4, #imgTrends-5 {
+  width: 100%;
 }

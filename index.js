@@ -7,6 +7,7 @@ $(window).on("load", function(){
     console.log(data)
   })*/
   getArticles();
+  getTrends();
 })
 
 function getArticles(type= "") {
@@ -22,7 +23,7 @@ function getArticles(type= "") {
 }
 
 /*function displayArticles(data) {
-  debugger;
+  /*debugger;
   //add first image to page//
   document.getElementById("art1title").innerHTML=data[0].title;
   document.getElementById("art1description").innerHTML=data[0].description;
@@ -49,12 +50,13 @@ function buildArticleHTML(article, id) {
     <div id= "article-${id}">
       <p id= "article-${id}-title">${title}</p>
       <div id= "article-${id}-img">
-        <a href="${articleUrl}" target="_blank"><img src= "${imageUrl}" id= "img-${id}" placeholder="image-not-available.png"></a>
+        <a href="${articleUrl}" target="_blank"><img src= "${imageUrl || 'logo.png'}" id= "img-${id}"></a>
       </div>
       <p id= "article-${id}-description">${description}</p>
     </div>
   `)
 }
+
 
 function displayArticles(data) {
   /* This for loop is equivalent to running the following:
@@ -67,6 +69,44 @@ function displayArticles(data) {
     articlesHtml.push(buildArticleHTML(data[i], i + 1));
   }
   document.getElementById("mainhead").innerHTML= articlesHtml.join('');
+}
+
+function getTrends() {
+  var apiUrlTrends= "https://newsapi.org/v2/top-headlines?country=us&category=technology&apiKey=f7c291e55d624f92a436de14705d5899";
+  $.ajax({
+    url: apiUrlTrends,
+    type: "GET",
+    data: {}
+  }).done(function(data){
+    displayTrends(data.articles)
+  })
+}
+
+function buildTrendsHTML(article, id) {
+  var titleTrends= article.title;
+  var trendsUrl= article.url;
+  var imageUrlTrends= article.urlToImage;
+  return (`
+    <div id= "trends-${id}">
+      <p id= "trends-${id}-title">${titleTrends}</p>
+      <div id= "trends-${id}-img">
+        <a href="${trendsUrl}" target="_blank"><img src= "${imageUrlTrends ||'logo.png'}" id= "imgTrends-${id}"></a>
+      </div>
+    </div>
+  `)
+}
+
+function displayTrends(data) {
+  /* This for loop is equivalent to running the following:
+  ${buildArticleHTML(data[0], 1)}
+  ${buildArticleHTML(data[1], 2)}
+  ${buildArticleHTML(data[2], 3)}
+  ${buildArticleHTML(data[3], 4)}*/
+  var trendsHtml = [];
+  for (var i = 0; i < 4; i++) {
+    trendsHtml.push(buildTrendsHTML(data[i], i + 1));
+  }
+  document.getElementById("trend").innerHTML= trendsHtml.join('');
 }
 
 function dropdown() {
@@ -97,26 +137,3 @@ window.onclick = function(event) {
 function searchBar() {
   document.getElementById("searchid").classList.toggle("searchShow");
 }
-
-function openPage(pageName, elmnt, color) {
-    // Hide all elements with class="tabcontent" by default */
-    var i, tabcontent, tablinks;
-    tabcontent = document.getElementsByClassName("tabcontent");
-    for (i = 0; i < tabcontent.length; i++) {
-        tabcontent[i].style.display = "none";
-    }
-
-    // Remove the background color of all tablinks/buttons
-    tablinks = document.getElementsByClassName("tablink");
-    for (i = 0; i < tablinks.length; i++) {
-        tablinks[i].style.backgroundColor = "";
-    }
-
-    // Show the specific tab content
-    document.getElementById(pageName).style.display = "block";
-
-    // Add the specific color to the button used to open the tab content
-    elmnt.style.backgroundColor = color;
-}
-
-document.getElementById("defaultOpen").click();
