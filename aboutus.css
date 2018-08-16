@@ -1,0 +1,42 @@
+header {
+  color: red;
+  font-size: 100px;
+  font-family : "Bookman"
+}
+
+img {
+  border-radius : 50%
+}
+
+.all{
+  margin-left: 300px;
+  display: inline-block;
+  width: 100%;
+  height: 50%;
+}
+.anushka{
+  width: 35%;
+  float:left;
+  display: inline-block;
+}
+.rene{
+  width: 35%;
+  float:left;
+  display: inline-block;
+}
+.cindy3{
+  width: 30%;
+  float: left;
+  display: inline-block;
+}
+body{
+  background-color: #f4f3d4;
+  font-size: 40px;
+  display: inline;
+  margin-top: auto;
+}
+
+#text{
+  width: 35%;
+  text-align: center;
+}
