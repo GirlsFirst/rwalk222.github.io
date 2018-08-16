@@ -259,26 +259,26 @@ hr {
   padding-bottom: 20px;
 }
 
-#r1img, #r2img, #r3img, #r4img {
+#img-1, #img-2, #img-3, #img-4 {
   width: 100%;
   height: 200px;
 }
 
-#art1, #art2, #art3, #art4 {
+#article-1, #article-2, #article-3, #article-4 {
   width: 23%;
   height: auto;
   display: inline-block;
   padding-right: 10px;
 }
 
-#art1title, #art2title, #art3title, #art4title {
+#article-1-title, #article-2-title, #article-3-title, #article-4-title {
   width: 100%;
   font-size: 24px;
   margin-top: 0;
   font-weight: bold;
 }
 
-#art1description, #art2description, #art3description, #art4description {
+#article-1-description, #article-2-description, #article-3-description, #article-4-description {
   font-size: 14px;
 }
 

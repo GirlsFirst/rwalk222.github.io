@@ -48,7 +48,9 @@ function buildArticleHTML(article, id) {
   return (`
     <div id= "article-${id}">
       <p id= "article-${id}-title">${title}</p>
-      <div id= "article-${id}-img"><img src= "${imageUrl}" id= "img-${id}"></div>
+      <div id= "article-${id}-img">
+        <a href="${articleUrl}" target="_blank"><img src= "${imageUrl}" id= "img-${id}" placeholder="image-not-available.png"></a>
+      </div>
       <p id= "article-${id}-description">${description}</p>
     </div>
   `)
