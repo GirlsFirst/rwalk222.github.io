@@ -1,8 +1,33 @@
+.container {
+  min-height: 100vh;
+  overflow: hidden;
+  display: block;
+  position: relative;
+  padding-bottom: 200px;
+}
+
 .header {
   overflow: hidden;
   background-color: #070600;
   padding: 3px 8px;
-  margin-top: 0px;
+  margin-top 0px;
+}
+
+#rightTemp {
+  display:inline-block;
+  width: 60%;
+}
+
+.temp li {
+  display: inline-block;
+}
+
+#li1 {
+  width: 66%;
+}
+
+#li2 {
+  width 30%;
 }
 
 #midul {
@@ -101,8 +126,9 @@ form.emailSus {
 .leftTemp {
   width: 33.33%;
   margin: 4px;
+  display:inline-block;
   border-style: solid;
-  border-width: thick;
+  border-width: thick ;
   border-color: #4056a1;
 }
 
@@ -133,6 +159,10 @@ form.emailSus input[type=email] {
   background-color: #070600;
   padding-top: 20px;
   padding-bottom: 20px;
+  position: absolute;
+  height: 200px
+  bottom: 0;
+  width: 100%;
 }
 
 form.ftsearch {
